@@ -1,5 +1,6 @@
 //VAR
 const range = document.getElementById("range-price");
+const switchContainer = document.querySelector('.switch');
 const discount = document.querySelector('.p-orange');
 const discountInput = document.getElementById("billing");
 const cardViews = document.querySelector('.card__views');
@@ -20,41 +21,44 @@ const handleRange = () =>{
     
     if(range.value <= 20){
         views.innerText = '10K pageviews';
-        price.innerText = discountInput.checked ? getDiscount(8) : '$8';
+        price.innerText = discountInput.checked ? getDiscount(8) : '$8.00';
     }else if(range.value > 20 && range.value <= 40){
         views.innerText = '50K pageviews';
-        price.innerText = discountInput.checked ? getDiscount(12) : '$12';
+        price.innerText = discountInput.checked ? getDiscount(12) : '$12.00';
 
     }else if(range.value > 40 && range.value <= 60){
         views.innerText = '100K pageviews';
-        price.innerText = discountInput.checked ? getDiscount(16) : '$16';
+        price.innerText = discountInput.checked ? getDiscount(16) : '$16.00';
 
     }else if(range.value > 60 && range.value <= 80){
         views.innerText = '500K pageviews';
-        price.innerText = discountInput.checked ? getDiscount(24) : '$24';
+        price.innerText = discountInput.checked ? getDiscount(24) : '$24.00';
 
     }else if(range.value > 80 && range.value <= 100){
         views.innerText = '1M pageviews';
-        price.innerText = discountInput.checked ? getDiscount(36) : '$36';
+        price.innerText = discountInput.checked ? getDiscount(36) : '$36.00';
 
     }
 }
 
 //MONTLY DISCOUNT
 discountInput.oninput = () => {
-    const switchContainer = document.querySelector('.switch');
     const priceNum = Number(price.innerText.replace('$', ' ').trim());
 
     if(discountInput.checked){
         switchContainer.style.background = 'hsl(174, 77%, 80%)';
 
         const applyDiscount = priceNum - (priceNum * 0.25);
-        price.innerText = `$${applyDiscount}`
+        price.innerText = `$${applyDiscount}.00`
     }else{
         switchContainer.style.background = 'hsl(223, 50%, 87%)';
         handleRange()
     }
 }
+
+switchContainer.addEventListener('click', () => {
+    discountInput.checked = !discountInput.checked;
+})
 
 const getDiscount = (value) => {
     const applyDiscount = value - (value * 0.25);

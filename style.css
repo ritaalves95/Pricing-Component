@@ -172,7 +172,20 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
+    position: relative;
 }
+
+.card__footer::before{
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 1px;
+    background-color: hsl(224, 65%, 95%);
+    left:-30px;
+    top: -20px;
+}
+
 .card__footer ul{
     list-style: none;
     padding: 0;
@@ -247,10 +260,14 @@ h1{
     .switch input[type="checkbox"]{
         width: 12px;
         height: 12px;
+        top:-1px;
     }
     .card__footer{
         flex-direction: column;
         margin-top: 30px;
+    }
+    .card__footer::before{
+        width: 122%;
     }
     .card__footer ul{
         margin-bottom: 30px;
