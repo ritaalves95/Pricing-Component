@@ -66,7 +66,7 @@ const getDiscount = (value) => {
     return `$${applyDiscount}`
 }
 
-// Resize on smaller screens
+//
 const resize = () => {
     const screenWidth = window.screen.availWidth;
 
