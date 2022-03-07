@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Pricing Component</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simple, traffic-based pricing</h1>
+            <p>Sign-up for our 30-day trial. No credit card required.</p>
+        </header>
+
+        <div class="card">
+            <div class="card__views">
+                <h3 id="views">100k pageviews</h3>
+                <article class="card__pricing">
+                    <h1 id="price">$16.00</h1>
+                    <span>/ month</span>
+                </article>
+            </div>
+            <div class="card__prince-range">
+                <input type="range" min="0" max="100" value="60" step="20" class="range-slider" id="range-price">
+            </div>
+            <div class="card__options">
+                <article>
+                    <label for="billing">Monthly Billing</label>
+                    <div class="switch">
+                        <input type="checkbox" id="billing" />
+                    </div>
+                </article>
+                <article>
+                    <p>Yearly Billing</p>
+                    <p class="p-orange">25% discount</p>
+                </article>
+            </div>
+            <div class="card__footer">
+                <ul>
+                    <li>
+                        <img src="./images/icon-check.svg" alt="check" />
+                        <p>Unlimited websites</p>
+                    </li>
+                    <li>
+                        <img src="./images/icon-check.svg" alt="check" />
+                        <p>100% data ownership</p>
+                    </li>
+                    <li>
+                        <img src="./images/icon-check.svg" alt="check" />
+                        <p>Email reports</p>
+                    </li>
+                </ul>
+
+                <button>Start my trial</button>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </div>
+</body>
+</html>

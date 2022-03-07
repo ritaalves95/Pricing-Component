@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./images/bg-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 60% ;
+  font-family: 'Manrope', sans-serif;
+  height: 100vh;
+
+  margin: 0 auto;
+  font-size: 15px;
+  color:  hsl(225, 20%, 60%);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; 
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+}
+
+header::after{
+    content: url('./images/pattern-circles.svg');
+    position: absolute;
+    top:-20px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: -9;
+}
+
+h1{
+    color: hsl(227, 35%, 25%);
+    line-height: 1;
+}
+
+/*      CARD        */
+.card{
+    width: 600px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 30px 30px;
+    border-radius: 10px;
+    box-shadow: -1px 8px 16px 3px rgba(0,0,0,0.25);
+}
+
+.card__views{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__views h3{
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.card__pricing{
+    display: flex;  
+    align-items: center;
+}
+
+.card__pricing h1{
+    font-size: 2.5rem;
+    margin-right: 10px;
+}
+
+    /*  price range   */
+.card__prince-range{
+    margin: 40px 0;
+    width:100%;
+}
+
+.range-slider{
+    width: 100%;
+    -webkit-appearance: none;
+    display: block;
+    background-color: hsl(224, 65%, 95%);
+    height: 10px;
+    border-radius: 20px;
+    outline: 0;
+}
+
+.range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-image: url('./images/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-color: hsl(174, 77%, 80%) ;
+    background-position: center center;
+    box-shadow: 0px 19px 40px -3px hsl(174, 77%, 80%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all .1s ease-in-out;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+    background-color: #22ad9e;
+  }
+
+  /*   options     */
+.card__options{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+}
+
+.card__options article{
+  display: flex;
+  margin-left: 10px;
+}
+.card__options article p,
+.card__options article label,
+.card__options article input{
+  display: inline-block;
+}
+
+.p-orange{
+    margin-left: 10px;
+    background-color: hsl(14, 92%, 95%);
+    color: hsl(15, 100%, 70%);
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.switch{
+    margin-left: 10px;
+    background-color: hsl(223, 50%, 87%);
+    width: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.6s ease-in-out;
+}
+
+.switch input[type="checkbox"]{
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+
+.switch:hover{
+   background-color: hsl(174, 77%, 80%);
+}
+
+.switch input[type="checkbox"]:checked{
+    transform: translateX(17px);
+}
+
+  /*   footer     */
+.card__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__footer ul{
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card__footer ul li {
+    line-height: 0;
+}
+
+.card__footer ul li p{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.card__footer button{
+    outline: none;
+    font-family: inherit;
+    border:none;
+    text-decoration: none;
+    padding: 10px 40px;
+    background-color: hsl(227, 35%, 25%);
+    color: hsl(226, 100%, 87%);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+.card__footer button:hover{
+    color: #fff;
+}
+
+@media(max-width: 375px){
+    body{
+        font-size: 12px;
+        height: fit-content;
+
+    }
+    .container{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20%;
+    }
+    header{
+        margin: 20% auto;
+    }
+    header h1{
+        font-size: 20px;
+    }
+    header p{
+        width: 50%;
+        margin: 0 auto;
+    }
+    header::after{
+        top:-30px;
+    }
+    .card{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .card__views{
+        flex-direction: column;
+    }
+    .card__options{
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .card__options article div,
+    .card__options article .p-orange{
+        margin-left: 5px;
+    }
+    .switch input[type="checkbox"]{
+        width: 12px;
+        height: 12px;
+    }
+    .card__footer{
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    .card__footer ul{
+        margin-bottom: 30px;
+    }
+}
