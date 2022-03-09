@@ -56,10 +56,6 @@ discountInput.oninput = () => {
     }
 }
 
-switchContainer.addEventListener('click', () => {
-    discountInput.checked = !discountInput.checked;
-})
-
 const getDiscount = (value) => {
     const applyDiscount = value - (value * 0.25);
 
